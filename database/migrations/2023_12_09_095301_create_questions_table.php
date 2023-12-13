@@ -17,6 +17,7 @@ class CreateQuestionsTable extends Migration
             $table->id();
             $table->foreignId('course_id')->constrained('courses');
             $table->text('question_text');
+            $table->enum('difficulty', ['BEGINNER', 'EASY', 'INTERMEDIATE', 'CHALLENGING', 'ADVANCED']);
             $table->timestamps();
         });
     }
